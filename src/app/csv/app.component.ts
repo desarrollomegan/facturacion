@@ -4,15 +4,14 @@ import {IExport } from 'src/app/interfaces/IExport';
 import { MapExportData } from 'src/app/data/MapExportData';
 import { ExportColumnHeaders } from 'src/app/models/export-headers.model';
 import { ExportService } from 'src/app/services/export.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.css'],
   providers :[ExportService]
-
-})
-export class AppComponent {
-  title = 'angular-firebase-crud';
+}) class CsvComponent {
+  title = 'Hello from Kendo UI!';
   public gridData: any[] = products;
 
   constructor(
@@ -31,3 +30,4 @@ export class AppComponent {
     this.exportService.ExportToCSV(exportData);
   }
 }
+

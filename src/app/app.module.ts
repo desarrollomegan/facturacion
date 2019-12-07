@@ -11,14 +11,25 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditUserResolver } from './edit-user/edit-user.resolver';
 import { NewUserComponent } from './new-user/new-user.component';
 import { HomeComponent } from './home/home.component';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
 
+
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
+import {LoginComponent} from "./login/login.component";
+
+import {UserComponent} from "./user/user.component";
+
+import {AngularFireAuthModule} from "@angular/fire/auth";
+import {UserService} from "./core/user.service";
+import {AuthService} from "./core/auth.service";
+import {UserResolver} from "./user/user.resolver";
+import {AuthGuard} from "./core/auth.guard";
+import { AppService } from './user/app.service';
 
 
 @NgModule({
@@ -27,7 +38,9 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from
     AvatarDialogComponent,
     EditUserComponent,
     NewUserComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    UserComponent
   ],
   entryComponents: [AvatarDialogComponent],
   imports: [
@@ -41,9 +54,13 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from
     MatButtonModule,
     MatInputModule,
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule,
+
+    // imports firebase/auth, only needed for auth features
   ],
-  providers: [FirebaseService, EditUserResolver],
+  providers: [FirebaseService, EditUserResolver,AuthService, UserService, UserResolver, AuthGuard,AppService],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

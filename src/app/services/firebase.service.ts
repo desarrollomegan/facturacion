@@ -43,10 +43,29 @@ export class FirebaseService {
   createUser(value, avatar){
     return this.db.collection('users').add({
       name: value.name,
+      RUT: value.RUT,
       nameToSearch: value.name.toLowerCase(),
-      surname: value.surname,
-      age: parseInt(value.age),
+      email: value.email,
+      password:value.password,
       avatar: avatar
     });
+  }
+
+  createUsersgoogle(value)
+  {
+    return this.// Add a new document in collection "cities"
+    db.collection("users").doc(value.user.uid).set({
+      name: value.user.displayName,
+      nameToSearch: value.user.displayName.toLowerCase(),
+      email: value.user.email,
+      uid: value.user.uid
+
+    })
+      .then(function() {
+        console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error);
+      });
   }
 }
