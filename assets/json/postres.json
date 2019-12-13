@@ -1,0 +1,21 @@
+[
+  {
+    "id":"1",
+    "nombre":"Documento 1",
+    "stock":"35",
+    "precio":"5.00",
+    "url":"https://firebasestorage.googleapis.com/v0/b/megan-174e1.appspot.com/o/Screenshot%20from%202019-12-02%2007-10-32.png?alt=media&token=a6d0883d-f68f-4043-aed3-002654048262",
+    "img":"tc.jpg",
+    "fecha":"2019-06-17 15:56:23"
+  },
+  {
+    "id":"2",
+    "nombre":"Documento 2",
+    "stock":"45",
+    "precio":"4.50",
+    "url":"https://firebasestorage.googleapis.com/v0/b/megan-174e1.appspot.com/o/Screenshot%20from%202019-12-02%2007-10-32.png?alt=media&token=a6d0883d-f68f-4043-aed3-002654048262",
+    "img":"pm.jpg",
+    "fecha":"2018-08-11 16:25:33"
+  }
+
+]
